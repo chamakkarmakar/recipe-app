@@ -130,42 +130,47 @@
   "categories": [
     {
       "title": "Italian",
+      "img": "https://img.freepik.com/premium-photo/background-red-italian-food_87720-33042.jpg?w=826",
       "id": "2314"
     },
     {
       "title": "Indian",
+      "img":"https://img.freepik.com/free-photo/top-view-eid-al-fitr-celebration-with-delicious-food_23-2151205066.jpg?t=st=1716704542~exp=1716708142~hmac=d190e27f231ccf872a57dce4687b802a96bb30a2b80f6ff42ae5388675857b60&w=740",
       "id": "8569"
     },
     {
       "title": "Japanese",
+      "img":"https://img.freepik.com/premium-photo/top-view-sushi-rolls-with-salmon-pickled-ginger-slices-wasabi-plate-rustic_198067-404546.jpg?w=740",
       "id": "5680"
     },
     {
       "title": "Mexican",
+      "img":"https://img.freepik.com/premium-photo/doritos-snacks-sour-cream-minced-meat_1097192-24580.jpg?w=826",
       "id": "e23f"
     },
     {
       "title": "Thai",
+      "img":"https://img.freepik.com/premium-photo/vegan-pad-thai-with-tofu-bean-sprouts_1230717-6115.jpg?w=740",
       "id": "970b"
     },
     {
       "title": "British",
+      "img":"https://img.freepik.com/free-photo/typical-hamburger-composition_23-2147695651.jpg?t=st=1716704945~exp=1716708545~hmac=6ddb69730aec7d618cc616dfda51d452427bb5354f5f39171ac5b0bc83a742c4&w=740",
       "id": "b069"
     },
     {
-      "title": "Middle Eastern",
-      "id": "b460"
-    },
-    {
       "title": "French",
+      "img": "https://img.freepik.com/free-photo/meat-cutlet-with-french-fries-ketchup-mayo-tarhun-lemonade-bread-table_140725-10973.jpg?t=st=1716705234~exp=1716708834~hmac=62a2721b6c8b2e3c536059241c29cf5350b1daeedc87aa4eb9c59a0fe7ab72ae&w=740",
       "id": "8c74"
     },
     {
       "title": "Chinese",
+      "img": "https://img.freepik.com/free-photo/pre-prepared-food-showcasing-ready-eat-delicious-meals-go_23-2151246059.jpg?t=st=1716705295~exp=1716708895~hmac=1f1ba282e7a1c654a13c06dfe670ff8b76a26eb6d0e8cc4c1e28703e64d595c2&w=740",
       "id": "c33b"
     },
     {
       "title": "American",
+      "img": "https://img.freepik.com/premium-photo/hamburger-with-flag-flag-it_1170794-406507.jpg?w=740",
       "id": "d05a"
     }
   ]

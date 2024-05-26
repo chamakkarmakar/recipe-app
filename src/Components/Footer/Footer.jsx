@@ -3,8 +3,8 @@ import React from 'react'
 const Footer = () => {
   return (
     
-    <footer className="flex flex-col text-black">
-    <div className="flex flex-col items-start justify-around gap-5 bg-sky-50 p-10 py-10 md:flex-row md:gap-0 md:items-center">
+    <footer className="flex flex-col text-white">
+    <div className="flex flex-col items-start justify-around gap-5 bg-[#393E46] p-10 py-10 md:flex-row md:gap-0 md:items-center">
         <aside className="text-xl">
            
             <p className='text-4xl font-semibold font-serif'>Recipe</p>
@@ -34,7 +34,7 @@ const Footer = () => {
             </ul>
         </nav>
     </div>
-    <aside className="bg-sky-100 py-5 text-center text-sm">
+    <aside className="bg-[#393E46] py-5 text-center text-sm">
         <p>&copy; 2024 Recipe. All Rights Reserved.</p>
     </aside>
 </footer>
