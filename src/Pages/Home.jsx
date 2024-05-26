@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import Banner from '../Components/home/Banner'
 import Category from '../Components/Categories/Category';
+import Recipe from '../Components/Recipe/Recipe';
 
 const Home = () => {
     const [categoris, setCategories] = useState();
+    const [recipes, setRescipes] = useState();
     useEffect(()=>{
         async function load() {
             const categoryRes = await fetch("http://localhost:3000/categories");
             const categoryData = await categoryRes.json();
-      
             setCategories(categoryData);
+
+
+            const recipeRes = await fetch("http://localhost:3000/recipes");
+            const recipeData = await recipeRes.json();
+            setRescipes(recipeData);
         }
         load();
     },[])
@@ -24,6 +30,19 @@ const Home = () => {
           ))}
         </div>
       </div>
+
+      <div className="mx-16">
+        <h1 className="text-4xl my-20 text-center">Our Newest Recipes </h1>
+        <div className="grid md:grid-cols-4 grid-cols-1 gap-6">
+          {recipes
+            ?.reverse()
+            ?.slice(0, 4)
+            ?.map((recipe) => (
+              <Recipe key={recipe?.id} recipe={recipe} />
+            ))}
+        </div>
+      </div>
+
     </div>
   )
 }

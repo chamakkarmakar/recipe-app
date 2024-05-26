@@ -5,7 +5,7 @@
       "title": "Spaghetti Carbonara 2",
       "price": 12.99,
       "description": "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.",
-      "image": "https://example.com/images/spaghetti-carbonara.jpg",
+      "image": "https://img.freepik.com/premium-photo/italian-pasta-spaghetti-with-baked-tomato_1472-50674.jpg?w=740",
       "category": "Thai"
     },
     {
@@ -13,7 +13,7 @@
       "title": "Chicken Tikka Masala",
       "price": 15.99,
       "description": "Grilled chunks of chicken enveloped in a creamy, spiced tomato sauce.",
-      "image": "https://example.com/images/chicken-tikka-masala.jpg",
+      "image": "https://img.freepik.com/premium-photo/photo-is-must-everyday-work-ai-generated-best-wonderful-photo_865967-664861.jpg?w=740",
       "category": "Indian"
     },
     {
@@ -21,7 +21,7 @@
       "title": "Sushi Platter",
       "price": 24.99,
       "description": "A variety of fresh sushi including nigiri, sashimi, and rolls.",
-      "image": "https://example.com/images/sushi-platter.jpg",
+      "image": "https://img.freepik.com/free-photo/mixed-sushi-set-japanese-food_1339-3618.jpg?t=st=1716707072~exp=1716710672~hmac=f1a7ad941e4b6df7064741c42a159f5be90a6c9cbc61798328841293b1c04738&w=740",
       "category": "Japanese"
     },
     {
@@ -29,7 +29,7 @@
       "title": "Tacos al Pastor",
       "price": 10.99,
       "description": "Flavorful marinated pork served on small corn tortillas with pineapple and onions.",
-      "image": "https://example.com/images/tacos-al-pastor.jpg",
+      "image": "https://img.freepik.com/premium-photo/close-up-woman-eating-delicious-taco_198067-238722.jpg?w=740",
       "category": "Mexican"
     },
     {
