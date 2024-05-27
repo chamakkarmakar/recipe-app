@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
     const [dropDownState, setDropDownState] = useState(false);
@@ -20,23 +21,23 @@ const NavBar = () => {
     return (
         <nav className="flex items-center justify-between bg-[#393E46] px-4 py-2 text-white">
             <div className="scale-100 cursor-pointer rounded-2xl px-3 py-2 text-xl font-semibold text-white transition-all duration-200 hover:scale-110">
-                <h2>Logo</h2>
+                <h2><Link to="/">Logo</Link></h2>
             </div>
             <ul className="hidden items-center justify-between gap-10 md:flex">
-                <li className="group flex  cursor-pointer flex-col">
-                    Home<span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+                <li className="group flex  cursor-pointer flex-col"><Link to="/">Home</Link>
+                    <span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
                 </li>
                 <li className="group flex  cursor-pointer flex-col">
-                    Services<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+                <Link to="/recipes">Recipes</Link><span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
                 </li>
                 <li className="group flex  cursor-pointer flex-col">
-                    About<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+                <Link to="/about">About</Link><span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
                 </li>
                 <li className="group flex  cursor-pointer flex-col">
-                    Contact<span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+                <Link to="/contact">Contact</Link><span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
                 </li>
                 <li className="group flex  cursor-pointer flex-col">
-                    <button className="rounded-full bg-sky-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90">Log In</button>
+                    <button className="rounded-full bg-sky-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90"><Link to="/login">Log In</Link></button>
                 </li>
             </ul>
             <div ref={dropDownMenuRef} onClick={() => setDropDownState(!dropDownState)} className="relative flex transition-transform md:hidden">
@@ -44,16 +45,16 @@ const NavBar = () => {
                 {dropDownState && (
                     <ul className=" z-10  gap-2  bg-[#393E46]  absolute right-0 top-11 flex w-[200px] flex-col  rounded-lg   text-base ">
                         <li className="cursor-pointer  px-6 py-2 text-white rounded-t-lg hover:bg-sky-600 ">
-                            Home
+                        <Link to="/">Home</Link>
                         </li>
                         <li className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 ">
-                            Services
+                        <Link to="/recipes">Recipes</Link>
                         </li>
                         <li className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 ">
-                            About
+                        <Link to="/about">About</Link>
                         </li>
                         <li className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 ">
-                            Contact
+                        <Link to="/contact">Contact</Link>
                         </li>
                         <li className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 ">
                             <button className="rounded-full bg-sky-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90">Log In</button>
