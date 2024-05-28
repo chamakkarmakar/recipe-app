@@ -1,13 +1,32 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import GoogleProvider from './GoogleProvider'
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Register = () => {
+    const {createUser} = useContext(AuthContext);
+    const handleSignUp = event =>{
+        event.preventDefault();
+        const email = event.target.email.value;
+        const password = event.target.password.value;
+        console.log(email, password);
+
+        createUser(email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            console.log(user);
+        })
+        .catch((error) => {
+            const errorMessage = error.message;
+            console.log(errorMessage);
+        });
+        event.target.reset();
+    }
   return (
     <div className="flex h-screen items-center justify-center shadow-2xl p-6 md:p-0">
     <div className="flex h-full w-full overflow-hidden rounded-xl shadow-md  md:h-[90%] md:w-[80%] lg:h-[80%]">
 
-        <div className="relative hidden h-full items-center justify-center bg-[#8EA7E9] md:flex md:w-[60%] lg:w-[40%]">
+        <div className="relative hidden h-full items-center justify-center shadow-2xl bg-[#8EA7E9] md:flex md:w-[60%] lg:w-[40%]">
             <div className="absolute -top-2 left-[20%] h-16 w-16 rounded-full bg-gradient-to-br  from-white via-[#9eb6f8] to-[#6585dd]"></div>
             <div className="absolute bottom-[18%] left-[20%] h-20 w-20 rounded-full bg-gradient-to-br  from-white via-[#9eb6f8] to-[#6585dd]"></div>
             <div className="absolute -right-7 top-[50%] h-14 w-14 -translate-y-1/2 rounded-full bg-gradient-to-br from-white via-[#9eb6f8] to-[#6585dd] transition-all"></div>
@@ -20,7 +39,7 @@ const Register = () => {
 
         <div className="flex w-full flex-col justify-center bg-white py-10 lg:w-[60%]">
             <h2 className="pb-8 text-center text-3xl font-bold text-[#8EA7E9]">Registration Here</h2>
-            <form className="flex  w-full flex-col items-center justify-center gap-4">
+            <form onSubmit={handleSignUp} className="flex  w-full flex-col items-center justify-center gap-4">
                 <input className="w-[80%] rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-[60%]" type="email" placeholder="Email" name="email"/>
                 <input className="w-[80%] rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-[60%]" type="password" placeholder="Password" name="password"/>
                 <p className="text-[14px] text-gray-400">Already have an account ? <Link to="/login" className="text-[#8EA7E9] ">Login</Link></p>
