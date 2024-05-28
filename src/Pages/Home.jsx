@@ -22,9 +22,9 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <div className="w-full mx-auto">
-        <h1 className="text-4xl my-20 text-center">Our Recipe Categories </h1>
-        <div className="grid md:grid-cols-3 grid-cols-2 gap-x-5 gap-y-7">
+      <div className=" md:w-3/4 w-full mx-auto">
+        <h1 className="text-4xl my-20 text-center font-semibold font-serif">Our Recipe Categories </h1>
+        <div className="grid md:grid-cols-3 grid-cols-2 gap-y-7">
           {categoris?.map((category) => (
             <Category key={category?.id} category={category} />
           ))}
@@ -32,7 +32,7 @@ const Home = () => {
       </div>
 
       <div className="mx-16">
-        <h1 className="text-4xl my-20 text-center">Our Newest Recipes </h1>
+        <h1 className="text-4xl my-20 text-center font-semibold font-serif">Our Newest Recipes </h1>
         <div className="grid md:grid-cols-4 grid-cols-1 gap-6">
           {recipes
             ?.reverse()
