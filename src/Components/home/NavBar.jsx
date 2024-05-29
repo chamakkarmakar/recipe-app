@@ -1,9 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom';
+import AuthProvider, { AuthContext } from '../AuthProvider/AuthProvider';
 
 const NavBar = () => {
+    const { user, logout } = useContext(AuthContext)
     const [dropDownState, setDropDownState] = useState(false);
     const dropDownMenuRef = useRef();
+
+    const handleSignOut = async () => {
+        await logout();
+    }
 
     useEffect(() => {
         const closeDropDown = (e) => {
@@ -28,16 +34,23 @@ const NavBar = () => {
                     <span className="mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
                 </li>
                 <li className="group flex  cursor-pointer flex-col">
-                <Link to="/recipes">Recipes</Link><span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+                    <Link to="/recipes">Recipes</Link><span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
                 </li>
                 <li className="group flex  cursor-pointer flex-col">
-                <Link to="/about">About</Link><span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+                    <Link to="/about">About</Link><span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
                 </li>
                 <li className="group flex  cursor-pointer flex-col">
-                <Link to="/contact">Contact</Link><span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+                    <Link to="/contact">Contact</Link><span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
                 </li>
                 <li className="group flex  cursor-pointer flex-col">
-                    <button className="rounded-full bg-sky-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90"><Link to="/login">Log In</Link></button>
+                    <Link to="/dashboard">Dashboard</Link><span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+                </li>
+                <li className="group flex  cursor-pointer flex-col">
+                    {user ?
+                        <button onClick={handleSignOut} className="rounded-full bg-sky-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90"><Link to="/login">Log Out</Link></button>
+                        :
+                        <button className="rounded-full bg-sky-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90"><Link to="/login">Log In</Link></button>}
+
                 </li>
             </ul>
             <div ref={dropDownMenuRef} onClick={() => setDropDownState(!dropDownState)} className="relative flex transition-transform md:hidden">
@@ -45,19 +58,25 @@ const NavBar = () => {
                 {dropDownState && (
                     <ul className=" z-10  gap-2  bg-[#393E46]  absolute right-0 top-11 flex w-[200px] flex-col  rounded-lg   text-base ">
                         <li className="cursor-pointer  px-6 py-2 text-white rounded-t-lg hover:bg-sky-600 ">
-                        <Link to="/">Home</Link>
+                            <Link to="/">Home</Link>
                         </li>
                         <li className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 ">
-                        <Link to="/recipes">Recipes</Link>
+                            <Link to="/recipes">Recipes</Link>
                         </li>
                         <li className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 ">
-                        <Link to="/about">About</Link>
+                            <Link to="/about">About</Link>
                         </li>
                         <li className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 ">
-                        <Link to="/contact">Contact</Link>
+                            <Link to="/contact">Contact</Link>
                         </li>
                         <li className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 ">
-                            <button className="rounded-full bg-sky-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90">Log In</button>
+                            <Link to="/contact">Dashboard</Link>
+                        </li>
+                        <li className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 ">
+                            {user ?
+                                <button onClick={handleSignOut} className="rounded-full bg-sky-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90"><Link to="/login">Log Out</Link></button>
+                                :
+                                <button className="rounded-full bg-sky-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90"><Link to="/login">Log In</Link></button>}
                         </li>
                     </ul>
 

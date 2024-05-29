@@ -2,11 +2,11 @@ import React from 'react'
 
 const Recipe = ({recipe}) => {
   return (
-    <div className="card shadow-xl">
+    <div className="card shadow-xl h-[350px]">
       <figure>
         <img src={recipe.image} alt="food" className="max-w-full" />
       </figure>
-      <div className="">
+      <div className="px-4">
         <h2 className="text-lg font-semibold">{recipe?.title}</h2>
         <div className='flex justify-between items-center my-3'>
         <div className="badge badge-outline">{recipe?.category}</div>
