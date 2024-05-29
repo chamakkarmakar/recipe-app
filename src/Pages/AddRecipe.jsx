@@ -1,6 +1,8 @@
 import React from 'react'
 
 const AddRecipe = () => {
+  const [showToast, setShowToast] = useState(false);
+
     const handleSubmit = async (e) => {
         e.preventDefault();
     
@@ -23,9 +25,11 @@ const AddRecipe = () => {
         })
           .then((res) => res.json())
           .then((data) => {
+            setShowToast(true)
             console.log(data);
             form.reset();
           });
+     
       };
 
   return (
@@ -91,6 +95,14 @@ const AddRecipe = () => {
         </div>
       </form>
     </div>
+    {
+                showToast &&
+                <Toast
+                    message="Recipe added successfully!"
+                    show={showToast}
+                    onClose={() => setShowToast(false)}
+                />
+            }
   </div>
   )
 }

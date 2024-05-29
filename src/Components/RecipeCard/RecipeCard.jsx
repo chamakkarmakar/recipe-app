@@ -5,6 +5,7 @@ import { AiFillDelete } from "react-icons/ai";
 
 const RecipeCard = ({ recipe, handleDeleteRecipe }) => {
     const { id, title, category, price, description, image } = recipe;
+    
     return (
         <div className="card w-[80%] bg-base-100 shadow-xl">
             <figure>

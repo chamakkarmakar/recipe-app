@@ -111,20 +111,6 @@
       "description": "A hearty Japanese noodle soup with meat, vegetables, and broth.",
       "image": "https://example.com/images/ramen.jpg",
       "category": "Japanese"
-    },
-    {
-      "id": "147",
-      "title": "test1111",
-      "price": "7878",
-      "category": "Mexican",
-      "descrition": "test"
-    },
-    {
-      "id": "121212",
-      "title": "Test ",
-      "price": "121",
-      "category": "Mexican",
-      "description": "test descittion"
     }
   ],
   "categories": [
@@ -135,27 +121,27 @@
     },
     {
       "title": "Indian",
-      "img":"https://img.freepik.com/free-photo/top-view-eid-al-fitr-celebration-with-delicious-food_23-2151205066.jpg?t=st=1716704542~exp=1716708142~hmac=d190e27f231ccf872a57dce4687b802a96bb30a2b80f6ff42ae5388675857b60&w=740",
+      "img": "https://img.freepik.com/free-photo/top-view-eid-al-fitr-celebration-with-delicious-food_23-2151205066.jpg?t=st=1716704542~exp=1716708142~hmac=d190e27f231ccf872a57dce4687b802a96bb30a2b80f6ff42ae5388675857b60&w=740",
       "id": "8569"
     },
     {
       "title": "Japanese",
-      "img":"https://img.freepik.com/premium-photo/top-view-sushi-rolls-with-salmon-pickled-ginger-slices-wasabi-plate-rustic_198067-404546.jpg?w=740",
+      "img": "https://img.freepik.com/premium-photo/top-view-sushi-rolls-with-salmon-pickled-ginger-slices-wasabi-plate-rustic_198067-404546.jpg?w=740",
       "id": "5680"
     },
     {
       "title": "Mexican",
-      "img":"https://img.freepik.com/premium-photo/doritos-snacks-sour-cream-minced-meat_1097192-24580.jpg?w=826",
+      "img": "https://img.freepik.com/premium-photo/doritos-snacks-sour-cream-minced-meat_1097192-24580.jpg?w=826",
       "id": "e23f"
     },
     {
       "title": "Thai",
-      "img":"https://img.freepik.com/premium-photo/vegan-pad-thai-with-tofu-bean-sprouts_1230717-6115.jpg?w=740",
+      "img": "https://img.freepik.com/premium-photo/vegan-pad-thai-with-tofu-bean-sprouts_1230717-6115.jpg?w=740",
       "id": "970b"
     },
     {
       "title": "British",
-      "img":"https://img.freepik.com/free-photo/typical-hamburger-composition_23-2147695651.jpg?t=st=1716704945~exp=1716708545~hmac=6ddb69730aec7d618cc616dfda51d452427bb5354f5f39171ac5b0bc83a742c4&w=740",
+      "img": "https://img.freepik.com/free-photo/typical-hamburger-composition_23-2147695651.jpg?t=st=1716704945~exp=1716708545~hmac=6ddb69730aec7d618cc616dfda51d452427bb5354f5f39171ac5b0bc83a742c4&w=740",
       "id": "b069"
     },
     {
@@ -175,5 +161,3 @@
     }
   ]
 }
-
-
