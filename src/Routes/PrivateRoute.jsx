@@ -3,8 +3,8 @@ import { AuthContext } from '../Components/AuthProvider/AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
 import LoadingSpinner from '../Components/Loading/LoadingSpinner';
 
-const PrivateRoute = ({children}) => {
-    const { user,loading } = useContext(AuthContext);
+const PrivateRoute = ({ children }) => {
+  const { user, loading } = useContext(AuthContext);
   const location = useLocation()
 
   if (loading) {
@@ -14,7 +14,7 @@ const PrivateRoute = ({children}) => {
     return children;
   }
   return (
-    <Navigate to={"/login"} state={{from:location}} replace />
+    <Navigate to={"/login"} state={{ from: location }} replace />
   )
 }
 

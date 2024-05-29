@@ -42,9 +42,9 @@ const NavBar = () => {
                 <li className="group flex  cursor-pointer flex-col">
                     <Link to="/contact">Contact</Link><span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
                 </li>
-                <li className="group flex  cursor-pointer flex-col">
+                {user && <li className="group flex  cursor-pointer flex-col">
                     <Link to="/dashboard">Dashboard</Link><span className="mt-[2px] h-[3px]  w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-                </li>
+                </li>}
                 <li className="group flex  cursor-pointer flex-col">
                     {user ?
                         <button onClick={handleSignOut} className="rounded-full bg-sky-600 px-6 py-2 text-white transition-all duration-300 hover:scale-90"><Link to="/login">Log Out</Link></button>
@@ -70,7 +70,7 @@ const NavBar = () => {
                             <Link to="/contact">Contact</Link>
                         </li>
                         <li className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 ">
-                            <Link to="/contact">Dashboard</Link>
+                            {user && <Link to="/dashboard">Dashboard</Link>}
                         </li>
                         <li className="cursor-pointer  px-6 py-2 text-white hover:bg-sky-600 ">
                             {user ?

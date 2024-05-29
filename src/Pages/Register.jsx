@@ -1,10 +1,15 @@
-import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
-import GoogleProvider from './GoogleProvider'
-import { AuthContext } from '../AuthProvider/AuthProvider';
+import React, { useContext, useEffect } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import GoogleProvider from '../Components/SignInUp/GoogleProvider';
+import { AuthContext } from '../Components/AuthProvider/AuthProvider';
 
 const Register = () => {
     const {createUser} = useContext(AuthContext);
+    const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location?.state?.from?.pathname || "/";
+
     const handleSignUp = event =>{
         event.preventDefault();
         const email = event.target.email.value;
@@ -22,6 +27,14 @@ const Register = () => {
         });
         event.target.reset();
     }
+
+    useEffect(() => {
+        if (user) {
+          navigate(from, { replace: true });
+        }
+      }, [user, from, navigate]);
+
+      
   return (
     <div className="flex h-screen items-center justify-center shadow-2xl p-6 md:p-0">
     <div className="flex h-full w-full overflow-hidden rounded-xl shadow-md  md:h-[90%] md:w-[80%] lg:h-[80%]">

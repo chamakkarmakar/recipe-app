@@ -1,10 +1,14 @@
-import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
-import GoogleProvider from './GoogleProvider'
-import { AuthContext } from '../AuthProvider/AuthProvider';
+import React, { useContext, useEffect } from 'react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import GoogleProvider from '../Components/SignInUp/GoogleProvider';
+import { AuthContext } from '../Components/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const {signIn} = useContext(AuthContext);
+    const { signIn, user } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location?.state?.from?.pathname || "/";
 
     const handleSignIn = (event) => {
         event.preventDefault();
@@ -13,16 +17,24 @@ const Login = () => {
         console.log(email, password);
 
         signIn(email, password)
-        .then((userCredential) => {
-            const user = userCredential.user;
-            console.log(user);
-        })
-        .catch((error) => {
-            const errorMessage = error.message;
-            console.log(errorMessage);
-        });
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log(user);
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                console.log(errorMessage);
+            });
         event.target.reset();
     };
+
+    useEffect(() => {
+        if (user) {
+          navigate(from, { replace: true });
+        }
+      }, [user, from, navigate]);
+
+
     return (
         <div className="flex h-screen items-center justify-center p-6 md:p-0">
             <div className="flex h-full w-full overflow-hidden rounded-xl shadow-md  md:h-[90%] md:w-[80%] lg:h-[80%]">
@@ -43,11 +55,11 @@ const Login = () => {
                     <form onSubmit={handleSignIn} className="flex  w-full flex-col items-center justify-center gap-4">
 
                         <input className="w-[80%] rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-[60%]" type="email" placeholder="Email" name="email" />
-                        
+
                         <input className="w-[80%] rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-[60%]" type="password" placeholder="Password" name="password" />
-                        
+
                         <p className="text-[14px] text-gray-400">Do not have an account ? <Link to="/register" className="text-[#8EA7E9] ">Create one</Link></p>
-                        
+
                         <input className="w-[80%] rounded-lg bg-[#8EA7E9] cursor-pointer px-6 py-2 font-medium text-white md:w-[60%]" type="submit" />
                     </form>
 
