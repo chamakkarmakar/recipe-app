@@ -29,6 +29,9 @@ const AddRecipe = () => {
             console.log(data);
             form.reset();
           });
+          setTimeout(() => {
+            setShowToast(false);
+        }, 3000);
      
       };
 

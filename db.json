@@ -27,7 +27,7 @@
     {
       "id": "4",
       "title": "Tacos al Pastor",
-      "price": 10.99,
+      "price": "10.99",
       "description": "Flavorful marinated pork served on small corn tortillas with pineapple and onions.",
       "image": "https://img.freepik.com/premium-photo/close-up-woman-eating-delicious-taco_198067-238722.jpg?w=740",
       "category": "Mexican"

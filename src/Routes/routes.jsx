@@ -8,6 +8,8 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import AddRecipe from "../Pages/AddRecipe";
 import AllRecipes from "../Pages/AllRecipes";
+import EditRecipe from "../Pages/EditRecipe";
+import RecipeDetails from "../Pages/RecipeDetails";
 
 export const router = createBrowserRouter([
     {
@@ -29,6 +31,12 @@ export const router = createBrowserRouter([
                 element: <Register />
 
             },
+            {
+                path: "/recipes/:id",
+                element: <RecipeDetails />,
+                loader: ({ params }) =>
+                  fetch(`http://localhost:3000/recipes/${params.id}`),
+              },
         ]
     },
     {
@@ -58,6 +66,16 @@ export const router = createBrowserRouter([
                     <AllRecipes />
                   </PrivateRoute>
                 ),
+              },
+              {
+                path: "all-recipes/edit/:id",
+                element: (
+                  <PrivateRoute>
+                    <EditRecipe />
+                  </PrivateRoute>
+                ),
+                loader: ({ params }) =>
+                  fetch(`http://localhost:3000/recipes/${params.id}`),
               },
         ]
     }
