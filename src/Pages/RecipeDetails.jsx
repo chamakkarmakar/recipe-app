@@ -1,5 +1,4 @@
 import React from 'react'
-import { AiFillDelete } from 'react-icons/ai';
 import { FaRegEdit } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 
