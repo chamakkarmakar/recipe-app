@@ -1,6 +1,6 @@
 import React from 'react'
 
-const AddProduct = () => {
+const AddRecipe = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
     
@@ -84,7 +84,7 @@ const AddProduct = () => {
         </div>
         <div className="mt-2 flex justify-center items-center">
           <input
-            className="btn mt-4 w-full bg-red-500 text-white p-4"
+            className="btn mt-4 w-full bg-[#8EA7E9] text-white p-4"
             type="submit"
             value="Add Recipe"
           />
@@ -95,4 +95,4 @@ const AddProduct = () => {
   )
 }
 
-export default AddProduct
+export default AddRecipe
