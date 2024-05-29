@@ -6,15 +6,15 @@ const AddProduct = () => {
     
         const form = e.target;
         const id = form.id.value;
-        const title = form.title.value;
-        const brand = form.brand.value;
+        const recipe = form.recipe.value;
+        const category = form.category.value;
         const price = form.price.value;
         const description = form.description.value;
         const image_url = form.image_url.value;
     
-        const data = { id, title, brand, price, description, image_url };
+        const data = { id, title: recipe, category, price, description, image_url };
     
-        await fetch("http://localhost:3000/shoes", {
+        await fetch("http://localhost:3000/recipes", {
           method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -27,40 +27,40 @@ const AddProduct = () => {
             form.reset();
           });
       };
-      
-  return (
-    <div>
-    <h1 className="text-5xl font-bold text-center">Add a Product</h1>
 
-    <div className="my-16">
+  return (
+    <div className='my-20'>
+    <h1 className="text-5xl font-bold text-center">Add Recipe</h1>
+
+    <div className="w-full mx-auto my-16">
       <form onSubmit={handleSubmit}>
         <div className="mt-2">
           <input
-            className="bg-gray-100 p-4 w-full border border-black rounded-lg"
+            className="w-full rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-full"
             type="text"
-            name="title"
-            placeholder="Title"
+            name="recipe"
+            placeholder="Recipe Name"
           />
         </div>
         <div className="mt-2">
           <input
-            className="bg-gray-100 p-4 w-full border border-black rounded-lg"
+            className="w-full rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-full"
             type="text"
-            name="brand"
-            placeholder="Brand"
+            name="category"
+            placeholder="Category"
           />
         </div>
         <div className="mt-2">
           <input
-            className="bg-gray-100 p-4 w-full border border-black rounded-lg"
+            className="w-full rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-full"
             type="number"
             name="price"
             placeholder="Price"
           />
         </div>
         <div className="mt-2">
-          <input
-            className="bg-gray-100 p-4 w-full border border-black rounded-lg"
+          <textarea style={{resize: "none"}}
+            className="w-full rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-full"
             type="text"
             name="description"
             placeholder="Description"
@@ -68,7 +68,7 @@ const AddProduct = () => {
         </div>
         <div className="mt-2">
           <input
-            className="bg-gray-100 p-4 w-full border border-black rounded-lg"
+            className="w-full rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-full"
             type="text"
             name="image_url"
             placeholder="Image URL"
@@ -76,7 +76,7 @@ const AddProduct = () => {
         </div>
         <div className="mt-2">
           <input
-            className="bg-gray-100 p-4 w-full border border-black rounded-lg"
+            className="w-full rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-full"
             type="text"
             name="id"
             placeholder="ID"
@@ -86,7 +86,7 @@ const AddProduct = () => {
           <input
             className="btn mt-4 w-full bg-red-500 text-white p-4"
             type="submit"
-            value="Add product"
+            value="Add Recipe"
           />
         </div>
       </form>
